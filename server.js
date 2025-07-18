@@ -8,7 +8,21 @@ const app = express()
 
 const port = 3000;
 
-app.use(cors());
+const frontEndUrl = "https://portfolio-je32.vercel.app/"
+
+app.use(cors(
+    {
+        origin: function (origin, callback) {
+            if (!origin || frontEndUrl.includes(origin)) {
+                callback(null, true);
+            } else {
+                callback(new Error('Not allowed by CORS'));
+            }
+        },
+        methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+        credentials: true,
+    }
+));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json())
 
@@ -19,7 +33,7 @@ app.get("/", () => {
 
 
 
-app.post("/sendEmail", sendEmail )
+app.post("/sendEmail", sendEmail)
 
 
 
