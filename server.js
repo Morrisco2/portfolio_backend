@@ -1,12 +1,12 @@
 import express from "express";
 import bodyParser from "body-parser";
 import cors from "cors";
-import emailController from "./controllers/emailController.js";
 import sendEmail from "./controllers/resendController.js";
+
 
 const app = express()
 
-const port = 3000;
+const port = process.env.PORT ||3000;
 
 const frontEndUrl = "https://portfolio-je32.vercel.app/"
 
