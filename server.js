@@ -8,7 +8,7 @@ const app = express()
 
 const port = process.env.PORT ||3000;
 
-const frontEndUrl = "https://portfolio-8c78-git-main-morriscotechs-projects.vercel.app/"
+const frontEndUrl = "https://portfolio-6meg.vercel.app/"
 
 app.use(cors(
     {
