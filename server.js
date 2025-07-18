@@ -26,10 +26,7 @@ app.use(cors(
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json())
 
-app.get("/", () => {
-    console.log("welcome to Morrisco Tech world");
-
-})
+app.get("/")
 
 
 
