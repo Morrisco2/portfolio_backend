@@ -8,6 +8,8 @@ const resend = new Resend(key)
 
 const sendEmail = async (req, res) => {
     const { email, name, message } = req.body;
+    console.log("email route is hitted");
+    
     try {
         const data = await resend.emails.send({
             from: 'onboarding@resend.dev',
